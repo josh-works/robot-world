@@ -1,14 +1,14 @@
-# Skill Inventory CRUD Redux
+# Robot World
 
 ## What's Already Set Up
 
-* skill_inventory_app.rb (server file) in app/controllers
-* A skill model with a database reference in its initialize method
+* robot_world_app.rb (server file) in app/controllers
+* A robot model with a database reference in its initialize method
 * `application.css`
 * `index.erb` and `layout.erb`
-* `db` and `db/migrtions` folders
+* `db` and `db/migrations` folders
 * `config.ru` and `Gemfile`
 
 ## Your Job
 
-CRUD out the functionality for a user to be able to add a skill (id, name, status), see all skills, edit a skill, and delete a skill.
+CRUD out the functionality for a user to be able to add a robot (id, name, city, state, department), see all robots, edit a robot, and delete a robot.
