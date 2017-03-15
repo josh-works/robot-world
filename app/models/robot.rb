@@ -42,11 +42,15 @@ class Robot
   end
 
   def self.update(id, robot_params)
-    database.execute("UPDATE robot SET name = ?, city = ?, state = ?, department = ? WHERE id = ?;",
+    database.execute("UPDATE robots
+                      SET name = ?, city = ?, state = ?, department = ? 
+                      WHERE id = ?;",
     robot_params[:name],
     robot_params[:city],
     robot_params[:state],
-    robot_params[:department])
+    robot_params[:department],
+    id)
+    Robot.find(id)
   end
 
 end
