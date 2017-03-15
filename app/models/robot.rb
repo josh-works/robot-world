@@ -43,7 +43,7 @@ class Robot
 
   def self.update(id, robot_params)
     database.execute("UPDATE robots
-                      SET name = ?, city = ?, state = ?, department = ? 
+                      SET name = ?, city = ?, state = ?, department = ?
                       WHERE id = ?;",
     robot_params[:name],
     robot_params[:city],
@@ -51,6 +51,10 @@ class Robot
     robot_params[:department],
     id)
     Robot.find(id)
+  end
+
+  def self.destroy(id)
+    database.execute("DELETE FROM robots WHERE id = ?;", id)
   end
 
 end

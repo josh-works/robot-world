@@ -2,6 +2,7 @@ require_relative '../models/robot.rb'
 
 class RobotWorldApp < Sinatra::Base
   set :root, File.expand_path("..", __dir__)
+  set :method_override, true
 
   get '/' do
     "<h1> try <pre>/robots</pre> instead! </h1>"
@@ -37,8 +38,9 @@ class RobotWorldApp < Sinatra::Base
     redirect "/robots/#{id}"
   end
 
-  delete '/robots/:id' do
-
+  delete '/robots/:id' do |id|
+    Robot.destroy(id.to_i)
+    redirect "/robots"
   end
 
 
