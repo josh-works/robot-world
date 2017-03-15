@@ -22,19 +22,19 @@ class RobotWorldApp < Sinatra::Base
     redirect '/robots'
   end
 
-  get 'robots/:id' do
-    "hello world"
-    binding.pry
-    # @robot = Robot.find(params[:id])
-    # erb :show
+  get '/robots/:id' do
+    @robot = Robot.find(params[:id])
+    erb :show
   end
 
-  get 'robots/:id/edit' do
-
+  get '/robots/:id/edit' do
+    @robot = Robot.find(params[:id])
+    erb :edit
   end
 
-  put '/robots/:id' do
-
+  post '/robots/:id' do |id|
+    Robot.update(id.to_i, params)
+    redirect "/robots/#{id}"
   end
 
   delete '/robots/:id' do

@@ -37,9 +37,16 @@ class Robot
   end
 
   def self.find(id)
-    binding.pry
     robot = database.execute("SELECT * FROM robots WHERE id = ?",id).first
     Robot.new(robot)
+  end
+
+  def self.update(id, robot_params)
+    database.execute("UPDATE robot SET name = ?, city = ?, state = ?, department = ? WHERE id = ?;",
+    robot_params[:name],
+    robot_params[:city],
+    robot_params[:state],
+    robot_params[:department])
   end
 
 end

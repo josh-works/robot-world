@@ -7,12 +7,15 @@
   <body>
     <h1>All Robots</h1>
 
+    <ul>
       <% @robots.each do |robot| %>
       <h3><a href="/robots/<%= robot.id %>"><%= robot.name %></a></h3>
-        <p><%= robot.city %></p>
-        <p><%= robot.state %></p>
-        <p><%= robot.department %></p>
-        <p><%= robot.id %></p>
+        <a href="/robots/<%= robot.id %>/edit">Edit</a>
+        <li><%= robot.city %></li>
+        <li><%= robot.state %></li>
+        <li><%= robot.department %></li>
+        <li><%= robot.id %></li>
         <% end %>
+      </ul>
   </body>
 </html>
