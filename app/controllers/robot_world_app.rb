@@ -5,7 +5,7 @@ class RobotWorldApp < Sinatra::Base
   set :method_override, true
 
   get '/' do
-    "<h1> try <pre>/robots</pre> instead! </h1>"
+    '<h1> try <pre><a href="/robots">/robots</a></pre> instead! </h1>'
   end
 
   get '/robots' do
